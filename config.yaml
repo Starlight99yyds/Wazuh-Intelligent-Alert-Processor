@@ -1,0 +1,24 @@
+# =================== 输出配置 =====================
+output:
+    # Alertmanager 推送配置
+    send_to_alertmanager: true
+    # 可以填写 Web UI 地址（如 http://localhost:9093/#/alerts），代码会自动转换为 API 地址
+    alertmanager_url: "http://localhost:9093/#/alerts"
+    alertmanager_timeout: 3
+
+# =================== 本地文件处理配置 =====================
+local_files:
+    # 是否处理本地ndjson文件
+    process_local_files: true
+    # 本地ndjson文件路径（相对于脚本运行目录）
+    #file_pattern: "data/small.ndjson"
+    file_pattern: "data/people.ndjson"
+    # 本地should.txt文件路径（相对于脚本运行目录）
+    #should_file: "data/small_should.txt"
+    should_file: "data/should.txt"
+
+# =================== 服务器配置 =====================
+server:
+    # 此处仅用于生成 Kibana 链接，与 Alertmanager 推送地址无关
+    host: "localhost"
+    port: 5555
